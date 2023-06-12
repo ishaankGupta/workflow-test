@@ -1,0 +1,25 @@
+name: Test, Lint and Build Application
+on: push
+jobs:
+  job_1:
+    name: Run code and build
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Get code on the machine
+        uses: actions/checkout@v3
+      - name: Install Dependency
+        run: npm ci
+      - name: Run lint
+        run: npm run lint
+      - name: Run tests
+        run: npm run test
+      - name: Build Code on the machine
+        run: |
+          echo "Building application ..."
+          npm run build
+  job_2:
+    needs: job_1
+    runs_on: ubuntu_latest
+    steps:
+      - name: Successfully run built
+        run: echo "Build is succeesfully built"    
