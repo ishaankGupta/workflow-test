@@ -18,8 +18,8 @@ jobs:
           echo "Building application ..."
           npm run build
   job_2:
+    runs-on: ubuntu-latest
     needs: job_1
-    runs_on: ubuntu_latest
     steps:
-      - name: Successfully run built
+      - name: Built run Successfully ran built
         run: echo "Build is succeesfully built"    
