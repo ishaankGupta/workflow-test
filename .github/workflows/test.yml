@@ -22,4 +22,4 @@ jobs:
     needs: job_1
     steps:
       - name: Built run Successfully ran built
-        run: echo "Build is succeesfully built"    
+        run: echo "Build is successfully built"    
